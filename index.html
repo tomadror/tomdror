@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Tom Dror</title>
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     html, body {
@@ -109,9 +108,9 @@
       margin-left: 240px;
       height: 100vh;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start; /* moved text further left */
       align-items: flex-start;
-      padding: 100px 120px 0 0;
+      padding: 100px 0 0 200px; /* adjust left position */
       text-shadow: 1px 1px 3px black;
       position: relative;
       z-index: 1;
@@ -119,9 +118,9 @@
 
     /* Typing text animation */
     .typing-text {
-      font-size: 1.6rem;
+      font-size: 2.2rem; /* bigger font */
       font-weight: 600;
-      white-space: nowrap;
+      white-space: pre-line; /* allows line breaks */
       overflow: hidden;
       border-right: 3px solid rgba(255, 255, 255, 0.8);
       animation: typing 6s steps(80, end), blink 0.75s step-end infinite;
@@ -155,18 +154,18 @@
 
     <div class="section-icons">
       <a href="#home"><i class="fas fa-home"></i>Home</a>
-      <a href="#about"><i class="fas fa-user"></i>About</a>
-      <a href="#publications"><i class="fas fa-book"></i>Pubs</a>
+      <a href="#about"><i class="fas fa-user"></i>About me</a> <!-- changed -->
+      <a href="#publications"><i class="fas fa-book"></i>Publications</a> <!-- changed -->
       <a href="#cv"><i class="fas fa-file"></i>CV</a>
       <a href="#contact"><i class="fas fa-address-card"></i>Contact</a>
     </div>
   </div>
 
-  <!-- Main Content (only the animated sentence visible initially) -->
+  <!-- Main Content -->
   <div class="main-content">
     <h1 class="typing-text">
-      I use satellite and other observational data to study land–atmosphere interactions, 
-      focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
+      I use satellite and other observational data to study 
+      land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
     </h1>
   </div>
 
