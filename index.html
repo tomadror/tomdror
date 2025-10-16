@@ -82,7 +82,7 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 12px;
-      margin-top: 40px;
+      margin-top: 20px;
       font-family: 'Raleway', sans-serif;
       font-size: 1.2rem;
       font-weight: 300;
@@ -110,16 +110,17 @@
     #home-text {
       position: absolute;
       top: 10%;
-      left: 15%;               /* shifted further left */
-      transform: translateX(0); /* no centering */
-      width: 650px;             /* wider box */
+      left: 5%;                 /* far left */
+      width: 700px;              /* wide box */
       font-size: 1.8rem;
       font-weight: 500;
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       line-height: 1.4;
       white-space: pre-wrap;
-      text-indent: 0;           /* no indent */
+      text-indent: 0;            /* no indent */
+      margin: 0;
+      padding: 0;
     }
 
     /* blinking cursor */
@@ -175,7 +176,7 @@
       if (i < fullText.length) {
         homeText.textContent += fullText[i];
         i++;
-        setTimeout(typeWriter, 40); // typing speed in ms
+        setTimeout(typeWriter, 40);
       }
     }
 
