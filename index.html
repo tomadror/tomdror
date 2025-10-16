@@ -110,15 +110,15 @@
     #home-text {
       position: absolute;
       top: 8%;
-      left: 62%;                 /* far left */
-      width: 700px;              /* wide box */
+      left: 40%;            /* moved more to the left */
+      width: 800px;         /* wider box */
       font-size: 1.8rem;
       font-weight: 500;
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       line-height: 1.4;
       white-space: pre-wrap;
-      text-indent: 0;            /* no indent */
+      text-indent: 0;       /* no indent */
       margin: 0;
       padding: 0;
     }
@@ -168,7 +168,7 @@
 
   <script>
     const homeText = document.getElementById("home-text");
-    const fullText = homeText.textContent;
+    const fullText = homeText.textContent.trim();
     homeText.textContent = "";
     let i = 0;
 
