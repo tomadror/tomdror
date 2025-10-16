@@ -14,18 +14,7 @@
       padding: 0;
       font-family: 'Raleway', sans-serif;
       color: white;
-      scroll-behavior: smooth; /* smooth scrolling when clicking sidebar links */
-    }
-
-    /* Background for landing/home */
-    .bg-image {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center/cover;
-      z-index: -1;
+      scroll-behavior: smooth; /* smooth scrolling */
     }
 
     /* Sidebar */
@@ -106,13 +95,22 @@
       margin: 0;
     }
 
-    /* Home text container */
-    #home {
-      position: relative;
+    /* Section common styling */
+    section {
       min-height: 100vh;
       padding-left: 240px; /* space for sidebar */
-      padding-top: 60px;
       box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+    }
+
+    /* Home section background */
+    #home {
+      position: relative;
+      width: 100%;
+      background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center/cover;
     }
 
     #home-text {
@@ -125,6 +123,7 @@
       text-indent: 0;
       margin: 0;
       padding: 0;
+      max-width: 800px;
     }
 
     /* blinking cursor */
@@ -141,21 +140,15 @@
     /* About Me Section */
     #about {
       background: url('forest_background.jpeg') no-repeat center center/cover;
-      color: white;
-      min-height: 100vh;
       width: 100%;
-      padding-left: 240px; /* space for sidebar */
-      padding-top: 60px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
+      color: white;
     }
 
     .about-container {
       max-width: 700px;
-      margin-left: 50px; /* distance from sidebar */
+      margin-left: 50px;
       padding: 50px 20px;
-      background-color: rgba(0,0,0,0.5); /* semi-transparent box */
+      background-color: rgba(0,0,0,0.5);
       border-radius: 8px;
     }
 
@@ -182,9 +175,6 @@
 </head>
 
 <body>
-  <!-- Background for home -->
-  <div class="bg-image"></div>
-
   <!-- Sidebar -->
   <div class="sidebar">
     <img src="tom_pic.jpg" alt="Tom Dror" class="profile">
@@ -207,14 +197,14 @@
     </div>
   </div>
 
-  <!-- Home section -->
+  <!-- Home Section -->
   <section id="home">
     <div id="home-text">
       I use satellite and other observational data to study land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
     </div>
   </section>
 
-  <!-- About Me section -->
+  <!-- About Me Section -->
   <section id="about">
     <div class="about-container">
       <h1>About Me</h1>
@@ -228,6 +218,7 @@
     </div>
   </section>
 
+  <!-- Typewriter Script for Home Text -->
   <script>
     const homeText = document.getElementById("home-text");
     const fullText = homeText.textContent.trim();
