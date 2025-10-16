@@ -12,13 +12,12 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%;
       font-family: 'Raleway', sans-serif;
       color: white;
-      overflow: hidden;
+      scroll-behavior: smooth; /* smooth scrolling when clicking sidebar links */
     }
 
-    /* Background image */
+    /* Background for landing/home */
     .bg-image {
       position: fixed;
       top: 0;
@@ -41,6 +40,7 @@
       flex-direction: column;
       align-items: center;
       padding-top: 30px;
+      z-index: 10;
     }
 
     .sidebar img.profile {
@@ -107,11 +107,15 @@
     }
 
     /* Home text container */
+    #home {
+      position: relative;
+      min-height: 100vh;
+      padding-left: 240px; /* space for sidebar */
+      padding-top: 60px;
+      box-sizing: border-box;
+    }
+
     #home-text {
-      position: absolute;
-      top: 9%;
-      left: 55%;
-      width: 800px;
       font-size: 1.8rem;
       font-weight: 500;
       color: white;
@@ -138,12 +142,13 @@
     #about {
       background: url('forest_background.jpeg') no-repeat center center/cover;
       color: white;
-      font-family: 'Raleway', sans-serif;
       min-height: 100vh;
       width: 100%;
       padding-left: 240px; /* space for sidebar */
       padding-top: 60px;
       box-sizing: border-box;
+      display: flex;
+      align-items: center;
     }
 
     .about-container {
@@ -177,6 +182,7 @@
 </head>
 
 <body>
+  <!-- Background for home -->
   <div class="bg-image"></div>
 
   <!-- Sidebar -->
@@ -201,13 +207,15 @@
     </div>
   </div>
 
-  <!-- Animated text in box -->
-  <div id="home-text">
-    I use satellite and other observational data to study land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
-  </div>
+  <!-- Home section -->
+  <section id="home">
+    <div id="home-text">
+      I use satellite and other observational data to study land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
+    </div>
+  </section>
 
-  <!-- About Me Section -->
-  <div id="about">
+  <!-- About Me section -->
+  <section id="about">
     <div class="about-container">
       <h1>About Me</h1>
       <hr>
@@ -218,7 +226,7 @@
       </p>
       <p>Cheers,<br>Tom</p>
     </div>
-  </div>
+  </section>
 
   <script>
     const homeText = document.getElementById("home-text");
