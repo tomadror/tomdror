@@ -80,20 +80,20 @@
     .section-icons {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;  /* align items to left */
+      align-items: flex-start;
       gap: 12px;
-      margin-top: 20px;
+      margin-top: 40px;
       font-family: 'Raleway', sans-serif;
-      font-size: 1.2rem;        /* match home text */
-      font-weight: 300;         /* match home text */
+      font-size: 1.2rem;
+      font-weight: 300;
     }
 
     .section-icons a {
       color: white;
       text-decoration: none;
       display: flex;
-      align-items: center;      /* icon to left of text */
-      gap: 12px;                /* space between icon and text */
+      align-items: center;
+      gap: 12px;
       transition: color 0.2s;
     }
 
@@ -102,23 +102,24 @@
     }
 
     .section-icons a span {
-      font-size: inherit;       /* same as parent */
-      margin: 0;                /* remove top margin */
+      font-size: inherit;
+      margin: 0;
     }
 
     /* Home text container */
     #home-text {
       position: absolute;
       top: 10%;
-      left: 30%;               
-      transform: translateX(-50%);
-      width: 450px;            
+      left: 15%;               /* shifted further left */
+      transform: translateX(0); /* no centering */
+      width: 650px;             /* wider box */
       font-size: 1.8rem;
       font-weight: 500;
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       line-height: 1.4;
-      white-space: pre-wrap; /* allow wrapping */
+      white-space: pre-wrap;
+      text-indent: 0;           /* no indent */
     }
 
     /* blinking cursor */
