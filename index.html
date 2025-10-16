@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Tom Dror</title>
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body, html {
       margin: 0;
@@ -37,7 +39,7 @@
       padding-top: 30px;
     }
 
-    .sidebar img {
+    .sidebar img.profile {
       border-radius: 50%;
       width: 100px;
       margin-bottom: 15px;
@@ -57,8 +59,7 @@
       align-items: center;
     }
 
-    .sidebar a img {
-      width: 20px;
+    .sidebar a i {
       margin-right: 8px;
     }
 
@@ -87,13 +88,34 @@
       background-color: #005f8d;
     }
 
-    /* Main content placeholder */
+    /* Main content */
     .main-content {
       margin-left: 220px;
       padding: 50px;
       color: white;
       text-shadow: 1px 1px 3px black;
     }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    section h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      padding-bottom: 5px;
+    }
+
+    section p, section ul {
+      line-height: 1.6;
+    }
+
+    section ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
   </style>
 </head>
 <body>
@@ -103,13 +125,16 @@
 
   <!-- Sidebar -->
   <div class="sidebar">
-    <img src="profile.jpg" alt="Tom Dror">
+    <img src="profile.jpg" alt="Tom Dror" class="profile">
     <h2>Tom Dror</h2>
-    <a href="mailto:tom.dror@noaa.gov">
-      <img src="email-logo.png" alt="Email"> Email
+    <a href="mailto:tom.drorschwartz@colorado.edu">
+      <i class="fas fa-envelope"></i> Email
     </a>
     <a href="https://www.linkedin.com/in/tomadror/" target="_blank">
-      <img src="linkedin-logo.png" alt="LinkedIn"> LinkedIn
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://scholar.google.com/citations?user=pjlzYJQAAAAJ&hl=en" target="_blank">
+      <i class="fas fa-graduation-cap"></i> Google Scholar
     </a>
 
     <div class="nav-buttons">
@@ -123,31 +148,70 @@
 
   <!-- Main Content -->
   <div class="main-content">
+
     <section id="home">
-      <h1>Welcome to My Personal Website</h1>
-      <p>Postdoctoral researcher at NOAA CSL, Boulder. I work on atmospheric and climate science, focusing on Amazon convection and climate feedbacks.</p>
+      <p>
+        I use satellite and other observational data to study land–atmosphere interactions, 
+        focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
+      </p>
     </section>
 
     <section id="about">
       <h2>About Me</h2>
-      <p>Brief bio and research interests...</p>
+      <p>
+        I am Tom Dror (she/her/hers), a postdoctoral researcher at CIRES, University of Colorado Boulder, 
+        embedded in the NOAA Chemical Sciences Laboratory, working in the Clouds, Aerosol, and Climate Group. 
+        My passion for clouds drives my research, which focuses on the coupling between land and clouds, 
+        largely in the tropics and the Amazon forest. For these investigations, my primary tools are measurements 
+        of the Earth's atmosphere, especially those from satellites.
+      </p>
+      <p>Cheers,<br>Tom</p>
     </section>
 
     <section id="publications">
       <h2>Publications</h2>
-      <p>List of papers or links to publications...</p>
+      <ul>
+        <li>Dror, T., et al., 2025. “Title of Paper 1,” <em>Journal Name</em></li>
+        <li>Dror, T., et al., 2024. “Title of Paper 2,” <em>Journal Name</em></li>
+        <li>Dror, T., et al., 2023. “Title of Paper 3,” <em>Journal Name</em></li>
+      </ul>
     </section>
 
     <section id="cv">
       <h2>CV</h2>
-      <p>Link to PDF or display CV content...</p>
+      <h3>Education</h3>
+      <ul>
+        <li>Ph.D. in Atmospheric Science, University XYZ, 2022</li>
+        <li>M.Sc. in Physics, University ABC, 2017</li>
+        <li>B.Sc. in Physics, University ABC, 2015</li>
+      </ul>
+
+      <h3>Professional Experience</h3>
+      <ul>
+        <li>Postdoctoral Researcher, NOAA CSL, Boulder, CO — 2024–Present</li>
+        <li>Research Assistant, University XYZ — 2018–2022</li>
+      </ul>
+
+      <h3>Selected Publications</h3>
+      <ul>
+        <li>Dror, T., et al., 2025. “Title of Paper 1,” <em>Journal Name</em></li>
+        <li>Dror, T., et al., 2024. “Title of Paper 2,” <em>Journal Name</em></li>
+      </ul>
+
+      <h3>Skills & Techniques</h3>
+      <ul>
+        <li>Python, MATLAB, Remote Sensing, Cloud Analysis</li>
+        <li>Data Visualization, Geospatial Analysis, Scientific Writing</li>
+      </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:tom.dror@noaa.gov">tom.dror@noaa.gov</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/tomadror/" target="_blank">tomadror</a></p>
+      <p>Email: <a href="mailto:tom.drorschwartz@colorado.edu">tom.drorschwartz@colorado.edu</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/tomadror-schwartz/" target="_blank">tomadror</a></p>
+      <p>Google Scholar: <a href="https://scholar.google.com/citations?user=pjlzYJQAAAAJ&hl=en" target="_blank">View Profile</a></p>
     </section>
+
   </div>
 
 </body>
