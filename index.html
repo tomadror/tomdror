@@ -110,7 +110,7 @@
     #home-text {
       position: absolute;
       top: 10%;
-      left: 60%;               
+      left: 30%;               
       transform: translateX(-50%);
       width: 450px;            
       font-size: 1.8rem;
@@ -118,31 +118,18 @@
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       line-height: 1.4;
+      white-space: pre-wrap; /* allow wrapping */
     }
 
-    /* Each line animates individually */
-    #home-text span {
-      display: block;                /* changed from inline-block */
-      max-width: 0;                  /* start from 0, expand to full line */
-      overflow: hidden;
-      border-right: 3px solid white;
-      white-space: normal;           
-      animation: typing 4s steps(60, end) forwards, blink 0.75s step-end infinite;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Second line starts after first finishes */
-    #home-text span:nth-child(2) {
-      animation-delay: 4s;  
-    }
-
-    @keyframes typing {
-      from { max-width: 0; }
-      to { max-width: 100%; }         /* expand to full container width */
+    /* blinking cursor */
+    #home-text::after {
+      content: '|';
+      animation: blink 0.7s step-end infinite;
+      margin-left: 2px;
     }
 
     @keyframes blink {
-      50% { border-color: transparent; }
+      50% { opacity: 0; }
     }
   </style>
 </head>
@@ -174,8 +161,24 @@
 
   <!-- Animated text in box -->
   <div id="home-text">
-    <span>I use satellite and other observational data to study</span>
-    <span>land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.</span>
+    I use satellite and other observational data to study land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
   </div>
+
+  <script>
+    const homeText = document.getElementById("home-text");
+    const fullText = homeText.textContent;
+    homeText.textContent = "";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < fullText.length) {
+        homeText.textContent += fullText[i];
+        i++;
+        setTimeout(typeWriter, 40); // typing speed in ms
+      }
+    }
+
+    typeWriter();
+  </script>
 </body>
 </html>
