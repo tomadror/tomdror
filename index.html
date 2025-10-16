@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Tom Dror</title>
-  <!-- Font Awesome for social icons -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
+      color: white;
     }
 
-    /* Background satellite image */
+    /* Background image */
     .bg-image {
       position: fixed;
       top: 0;
@@ -29,10 +30,9 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 200px;
+      width: 220px;
       height: 100%;
-      background-color: rgba(0,0,0,0.7);
-      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -41,58 +41,38 @@
 
     .sidebar img.profile {
       border-radius: 50%;
-      width: 100px;
+      width: 120px;
       margin-bottom: 15px;
+      border: 3px solid white;
     }
 
     .sidebar h2 {
-      margin: 5px 0 20px 0;
-      font-size: 18px;
+      margin: 5px 0 20px;
+      font-size: 20px;
       text-align: center;
     }
 
-    .sidebar a {
+    .social-icons, .section-icons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a, .section-icons a {
       color: white;
       text-decoration: none;
-      margin: 5px 0;
-      display: flex;
-      align-items: center;
+      font-size: 22px;
+      transition: color 0.2s;
     }
 
-    .sidebar a i {
-      margin-right: 8px;
-    }
-
-    /* Navigation Buttons */
-    .nav-buttons {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      align-items: center;
-    }
-
-    .nav-buttons a {
-      display: block;
-      margin: 5px 0;
-      padding: 8px 12px;
-      background-color: #0077b5;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      width: 80%;
-      text-align: center;
-    }
-
-    .nav-buttons a:hover {
-      background-color: #005f8d;
+    .social-icons a:hover, .section-icons a:hover {
+      color: #00aced;
     }
 
     /* Main content */
     .main-content {
-      margin-left: 220px;
+      margin-left: 240px;
       padding: 50px;
-      color: white;
       text-shadow: 1px 1px 3px black;
     }
 
@@ -101,10 +81,10 @@
     }
 
     section h2 {
-      margin-bottom: 15px;
-      font-size: 24px;
+      font-size: 26px;
       border-bottom: 1px solid rgba(255,255,255,0.5);
       padding-bottom: 5px;
+      margin-bottom: 15px;
     }
 
     section p, section ul {
@@ -120,30 +100,30 @@
 </head>
 <body>
 
-  <!-- Background Image -->
+  <!-- Background -->
   <div class="bg-image"></div>
 
   <!-- Sidebar -->
   <div class="sidebar">
-    <img src="profile.jpg" alt="Tom Dror" class="profile">
+    <img src="tom_pic.jpg" alt="Tom Dror" class="profile">
     <h2>Tom Dror</h2>
-    <a href="mailto:tom.drorschwartz@colorado.edu">
-      <i class="fas fa-envelope"></i> Email
-    </a>
-    <a href="https://www.linkedin.com/in/tomadror/" target="_blank">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-    <a href="https://scholar.google.com/citations?user=pjlzYJQAAAAJ&hl=en" target="_blank">
-      <i class="fas fa-graduation-cap"></i> Google Scholar
-    </a>
 
-    <div class="nav-buttons">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#publications">Publications</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
+    <!-- Social icons row -->
+    <div class="social-icons">
+      <a href="mailto:tom.drorschwartz@colorado.edu"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/tomadror/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://scholar.google.com/citations?user=pjlzYJQAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
     </div>
+
+    <!-- Section icons row -->
+    <div class="section-icons">
+      <a href="#home"><i class="fas fa-home"></i></a>
+      <a href="#about"><i class="fas fa-user"></i></a>
+      <a href="#publications"><i class="fas fa-book"></i></a>
+      <a href="#cv"><i class="fas fa-file"></i></a>
+      <a href="#contact"><i class="fas fa-address-card"></i></a>
+    </div>
+
   </div>
 
   <!-- Main Content -->
@@ -190,12 +170,6 @@
       <ul>
         <li>Postdoctoral Researcher, NOAA CSL, Boulder, CO — 2024–Present</li>
         <li>Research Assistant, University XYZ — 2018–2022</li>
-      </ul>
-
-      <h3>Selected Publications</h3>
-      <ul>
-        <li>Dror, T., et al., 2025. “Title of Paper 1,” <em>Journal Name</em></li>
-        <li>Dror, T., et al., 2024. “Title of Paper 2,” <em>Journal Name</em></li>
       </ul>
 
       <h3>Skills & Techniques</h3>
