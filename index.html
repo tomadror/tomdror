@@ -82,7 +82,7 @@
       text-align: center;
     }
 
-    /* Home text */
+    /* Home text container (invisible box) */
     #home-text {
       position: absolute;
       top: 18%;
@@ -93,20 +93,16 @@
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       line-height: 1.4;
-    }
-
-    #home-text span {
-      display: inline-block;
-      white-space: nowrap;
+      width: 500px;          /* width of the invisible box */
       overflow: hidden;
       border-right: 3px solid white;
-      animation: typing 4s steps(60, end) forwards, blink 0.75s step-end infinite;
-      margin-bottom: 0.5rem;
+      white-space: normal;    /* allow wrapping */
+      animation: typing 6s steps(120, end) forwards, blink 0.75s step-end infinite;
     }
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 100%; }
+      to { width: 500px; }     /* match the container width */
     }
 
     @keyframes blink {
@@ -141,10 +137,10 @@
     </div>
   </div>
 
-  <!-- Animated text -->
+  <!-- Animated text in box -->
   <div id="home-text">
-    <span>I use satellite and other observational data to study</span><br>
-    <span>land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.</span>
+    I use satellite and other observational data to study
+    land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
   </div>
 
 </body>
