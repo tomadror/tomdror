@@ -145,10 +145,12 @@
       background: url('forest_back.jpeg') no-repeat center center/cover;
       width: 100%;
       color: black; /* black text */
+      display: block; /* override flex centering for About section */
+      padding-top: 20px; /* space from top */
     }
 
     .about-text {
-      margin: 20px 0 0 20px; /* upper left */
+      margin: 10px 0 0 20px; /* move up and left */
       max-width: 700px;
     }
 
@@ -161,10 +163,10 @@
     .about-text hr {
       border: 0;
       height: 1px;
-      width: 100px; /* much shorter */
+      width: 75px; /* much shorter */
       background-color: black;
       margin-bottom: 20px;
-      margin-left: 0;
+      margin-left: 0; /* align left */
     }
 
     .about-text p {
