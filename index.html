@@ -3,33 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Tom Dror</title>
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Raleway Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      font-family: Arial, sans-serif;
+      font-family: 'Raleway', sans-serif;
       color: white;
       overflow: hidden;
     }
 
-    /* Satellite background */
-    body {
-      background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    /* Overlay for readability */
-    body::before {
-      content: "";
+    /* Background image */
+    .bg-image {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.35);
-      z-index: 0;
+      background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center/cover;
+      z-index: -1;
     }
 
     /* Sidebar */
@@ -44,7 +41,6 @@
       flex-direction: column;
       align-items: center;
       padding-top: 30px;
-      z-index: 2;
     }
 
     .sidebar img.profile {
@@ -60,71 +56,52 @@
       text-align: center;
     }
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-
-    .social-icons a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      transition: color 0.2s;
-    }
-
-    .social-icons a:hover {
-      color: #aad7ff;
-    }
-
-    .section-icons {
+    .social-icons, .section-icons {
       display: flex;
       flex-direction: column;
-      gap: 25px;
       align-items: center;
-      margin-top: 30px;
+      gap: 15px;
+      margin-bottom: 20px;
     }
 
-    .section-icons a {
+    .social-icons a, .section-icons a {
       color: white;
       text-decoration: none;
-      font-size: 20px;
-      text-align: center;
+      font-size: 22px;
       transition: color 0.2s;
     }
 
-    .section-icons a:hover {
-      color: #aad7ff;
+    .social-icons a:hover, .section-icons a:hover {
+      color: #00aced;
     }
 
-    .section-icons i {
+    .section-icons a span {
+      font-size: 14px;
+      margin-top: 4px;
       display: block;
-      margin-bottom: 5px;
+      text-align: center;
     }
 
-    /* Main content */
-    .main-content {
-      margin-left: 240px;
-      height: 100vh;
-      display: flex;
-      justify-content: flex-start; /* moved text further left */
-      align-items: flex-start;
-      padding: 100px 0 0 200px; /* adjust left position */
-      text-shadow: 1px 1px 3px black;
-      position: relative;
-      z-index: 1;
+    /* Home text */
+    #home-text {
+      position: absolute;
+      top: 18%;
+      left: 60%;
+      transform: translateX(-50%);
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      line-height: 1.4;
     }
 
-    /* Typing text animation */
-    .typing-text {
-      font-size: 2.2rem; /* bigger font */
-      font-weight: 600;
-      white-space: pre-line; /* allows line breaks */
+    #home-text span {
+      display: inline-block;
+      white-space: nowrap;
       overflow: hidden;
-      border-right: 3px solid rgba(255, 255, 255, 0.8);
-      animation: typing 6s steps(80, end), blink 0.75s step-end infinite;
-      max-width: 700px;
+      border-right: 3px solid white;
+      animation: typing 4s steps(60, end) forwards, blink 0.75s step-end infinite;
+      margin-bottom: 0.5rem;
     }
 
     @keyframes typing {
@@ -140,33 +117,34 @@
 </head>
 
 <body>
+  <div class="bg-image"></div>
 
   <!-- Sidebar -->
   <div class="sidebar">
     <img src="tom_pic.jpg" alt="Tom Dror" class="profile">
     <h2>Tom Dror</h2>
 
+    <!-- Social icons -->
     <div class="social-icons">
       <a href="mailto:tom.drorschwartz@colorado.edu"><i class="fas fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/tomadror/" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://scholar.google.com/citations?user=pjlzYJQAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
     </div>
 
+    <!-- Section icons -->
     <div class="section-icons">
-      <a href="#home"><i class="fas fa-home"></i>Home</a>
-      <a href="#about"><i class="fas fa-user"></i>About me</a> <!-- changed -->
-      <a href="#publications"><i class="fas fa-book"></i>Publications</a> <!-- changed -->
-      <a href="#cv"><i class="fas fa-file"></i>CV</a>
-      <a href="#contact"><i class="fas fa-address-card"></i>Contact</a>
+      <a href="#home"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="#about"><i class="fas fa-user"></i><span>About Me</span></a>
+      <a href="#publications"><i class="fas fa-book"></i><span>Publications</span></a>
+      <a href="#cv"><i class="fas fa-file"></i><span>CV</span></a>
+      <a href="#contact"><i class="fas fa-address-card"></i><span>Contact</span></a>
     </div>
   </div>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <h1 class="typing-text">
-      I use satellite and other observational data to study 
-      land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
-    </h1>
+  <!-- Animated text -->
+  <div id="home-text">
+    <span>I use satellite and other observational data to study</span><br>
+    <span>land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.</span>
   </div>
 
 </body>
