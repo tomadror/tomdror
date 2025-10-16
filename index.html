@@ -1,156 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Tom Dror</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tom Dror</title>
+    <style>
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: white;
+        height: 100vh;
+        background: url("C:/Users/tdror/OneDrive - UCB-O365/Documents/website/snapshot-2023-08-06T00_00_00Z.jpeg")
+          no-repeat center center fixed;
+        background-size: cover;
+      }
 
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      /* Add a semi-transparent overlay for readability */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: -1;
+      }
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      color: white;
-      overflow: hidden;
-    }
+      .main-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
 
-    /* Background image */
-    .bg-image {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center/cover;
-      z-index: -1;
-    }
+      /* Move landing text higher up */
+      #home {
+        min-height: 50vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: center;
+        padding-top: 60px;
+      }
 
-    /* Sidebar */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 220px;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 30px;
-    }
+      /* Typing effect */
+      .typing-text {
+        font-size: 1.6rem;
+        font-weight: 500;
+        max-width: 700px;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid rgba(255, 255, 255, 0.8);
+        animation: typing 6s steps(80, end), blink 0.75s step-end infinite;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+      }
 
-    .sidebar img.profile {
-      border-radius: 50%;
-      width: 120px;
-      margin: 20px 0;
-      border: 3px solid white;
-    }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
 
-    .sidebar h2 {
-      margin: 5px 0 10px;
-      font-size: 20px;
-      text-align: center;
-    }
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
 
-    /* Social icons (email/linkedin/scholar) */
-    .social-icons {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
+      #about {
+        margin-top: 60px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        border-radius: 10px;
+      }
 
-    .social-icons a {
-      color: white;
-      font-size: 22px;
-      transition: color 0.2s;
-    }
+      .profile-pic {
+        width: 160px;
+        border-radius: 50%;
+        display: block;
+        margin: 20px auto;
+        border: 3px solid white;
+      }
 
-    .social-icons a:hover {
-      color: #00aced;
-    }
+      h1,
+      h2 {
+        color: #ffffff;
+        font-weight: 500;
+      }
 
-    /* Navigation section icons (vertical) */
-    .section-icons {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      align-items: flex-start;
-      width: 100%;
-      padding-left: 40px;
-    }
+      a {
+        color: #aad7ff;
+        text-decoration: none;
+      }
 
-    .section-icons a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: color 0.2s;
-    }
+      a:hover {
+        text-decoration: underline;
+      }
 
-    .section-icons a:hover {
-      color: #00aced;
-    }
+      #contact {
+        margin-top: 60px;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 20px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
 
-    /* Typewriter effect text */
-    .typewriter {
-      position: absolute;
-      top: 20%;
-      right: 10%;
-      font-size: 2rem;
-      font-weight: bold;
-      max-width: 600px;
-      line-height: 1.5;
-      white-space: pre-line;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-      overflow: hidden;
-      border-right: 3px solid white;
-      animation: typing 6s steps(60, end), blink 0.8s step-end infinite;
-    }
+  <body>
+    <div class="main-content">
+      <section id="home">
+        <h1 class="typing-text">
+          I use satellite and other observational data to study
+          land–atmosphere interactions, focusing on how forest cover changes
+          influence clouds, radiation, and precipitation in a changing climate.
+        </h1>
+      </section>
 
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
+      <section id="about">
+        <h2>About Me</h2>
+        <img src="tom_pic.jpg" alt="Tom Dror" class="profile-pic" />
+        <p>
+          I am Tom Dror (she/her/hers), a postdoctoral researcher for CIRES,
+          University of Colorado Boulder, embedded in the NOAA Chemical Sciences
+          Laboratory, working in the Clouds, Aerosol, and Climate Group. My
+          curiosity about clouds drives my research, which explores the coupling
+          of land and clouds—largely focused on the tropics and the Amazon
+          forest. For these investigations, my primary tools of choice are
+          measurements (or observations) of the Earth's atmosphere, especially
+          those made from satellites.
+        </p>
+      </section>
 
-    @keyframes blink {
-      50% { border-color: transparent; }
-    }
-
-  </style>
-</head>
-<body>
-
-  <!-- Background -->
-  <div class="bg-image"></div>
-
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>Tom Dror</h2>
-    <div class="social-icons">
-      <a href="mailto:tom.drorschwartz@colorado.edu"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/tomadror/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://scholar.google.com/citations?user=pjlzYJQAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email:
+          <a href="mailto:tom.drorschwartz@colorado.edu"
+            >tom.drorschwartz@colorado.edu</a
+          >
+        </p>
+        <p>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/tom-dror-schwartz/"
+            target="_blank"
+            >tomadror</a
+          >
+        </p>
+        <p>
+          Google Scholar:
+          <a
+            href="https://scholar.google.com/citations?user=pjlzYJQAAAAJ&hl=en"
+            target="_blank"
+            >Profile</a
+          >
+        </p>
+      </section>
     </div>
-    <img src="profile.jpg" alt="Tom Dror" class="profile">
-
-    <div class="section-icons">
-      <a href="#home"><i class="fas fa-home"></i> Home</a>
-      <a href="#about"><i class="fas fa-user"></i> About</a>
-      <a href="#publications"><i class="fas fa-book"></i> Publications</a>
-      <a href="#cv"><i class="fas fa-file"></i> CV</a>
-      <a href="#contact"><i class="fas fa-address-card"></i> Contact</a>
-    </div>
-  </div>
-
-  <!-- Typewriter Intro Text -->
-  <div class="typewriter">
-    I use satellite and other observational data to study land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
-  </div>
-
-</body>
+  </body>
 </html>
