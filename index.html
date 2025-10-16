@@ -56,53 +56,89 @@
       text-align: center;
     }
 
-    .social-icons, .section-icons {
+    /* Social icons horizontal */
+    .social-icons {
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      justify-content: center;
       gap: 15px;
       margin-bottom: 20px;
     }
 
-    .social-icons a, .section-icons a {
+    .social-icons a {
       color: white;
       text-decoration: none;
       font-size: 22px;
       transition: color 0.2s;
     }
 
-    .social-icons a:hover, .section-icons a:hover {
+    .social-icons a:hover {
+      color: #00aced;
+    }
+
+    /* Section icons vertical with icon left of text */
+    .section-icons {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;  /* align items to left */
+      gap: 15px;
+      margin-bottom: 20px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.8rem;        /* match home text */
+      font-weight: 500;         /* match home text */
+    }
+
+    .section-icons a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;      /* icon to left of text */
+      gap: 10px;                /* space between icon and text */
+      transition: color 0.2s;
+    }
+
+    .section-icons a:hover {
       color: #00aced;
     }
 
     .section-icons a span {
-      font-size: 14px;
-      margin-top: 4px;
-      display: block;
-      text-align: center;
+      font-size: inherit;       /* same as parent */
+      margin: 0;                /* remove top margin */
     }
 
-    /* Home text container (invisible box) */
+    /* Home text container */
     #home-text {
       position: absolute;
-      top: 18%;
-      left: 60%;
+      top: 10%;
+      left: 30%;               /* shifted further to the left */
       transform: translateX(-50%);
+      width: 450px;            /* box width */
       font-size: 1.8rem;
       font-weight: 500;
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       line-height: 1.4;
-      width: 500px;          /* width of the invisible box */
+    }
+
+    /* Each line animates individually */
+    #home-text span {
+      display: inline-block;
+      max-width: 100%;
       overflow: hidden;
       border-right: 3px solid white;
-      white-space: normal;    /* allow wrapping */
-      animation: typing 6s steps(120, end) forwards, blink 0.75s step-end infinite;
+      white-space: normal;           /* allow wrapping */
+      animation: typing 4s steps(60, end) forwards, blink 0.75s step-end infinite;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Second line starts after first finishes */
+    #home-text span:nth-child(2) {
+      animation-delay: 4s;  /* adjust based on first line length */
     }
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 500px; }     /* match the container width */
+      to { width: 100%; }
     }
 
     @keyframes blink {
@@ -139,8 +175,8 @@
 
   <!-- Animated text in box -->
   <div id="home-text">
-    I use satellite and other observational data to study
-    land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
+    <span>I use satellite and other observational data to study</span>
+    <span>land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.</span>
   </div>
 
 </body>
