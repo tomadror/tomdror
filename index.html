@@ -110,15 +110,15 @@
     #home-text {
       position: absolute;
       top: 9%;
-      left: 55%;            /* moved more to the left */
-      width: 800px;         /* wider box */
+      left: 55%;
+      width: 800px;
       font-size: 1.8rem;
       font-weight: 500;
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       line-height: 1.4;
       white-space: pre-wrap;
-      text-indent: 0;       /* no indent */
+      text-indent: 0;
       margin: 0;
       padding: 0;
     }
@@ -132,6 +132,46 @@
 
     @keyframes blink {
       50% { opacity: 0; }
+    }
+
+    /* About Me Section */
+    #about {
+      background: url('forest_background.jpeg') no-repeat center center/cover;
+      color: white;
+      font-family: 'Raleway', sans-serif;
+      min-height: 100vh;
+      width: 100%;
+      padding-left: 240px; /* space for sidebar */
+      padding-top: 60px;
+      box-sizing: border-box;
+    }
+
+    .about-container {
+      max-width: 700px;
+      margin-left: 50px; /* distance from sidebar */
+      padding: 50px 20px;
+      background-color: rgba(0,0,0,0.5); /* semi-transparent box */
+      border-radius: 8px;
+    }
+
+    .about-container h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .about-container hr {
+      border: 0;
+      height: 1px;
+      background-color: white;
+      margin-bottom: 20px;
+    }
+
+    .about-container p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-indent: 0;
+      margin-bottom: 16px;
     }
   </style>
 </head>
@@ -164,6 +204,20 @@
   <!-- Animated text in box -->
   <div id="home-text">
     I use satellite and other observational data to study land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
+  </div>
+
+  <!-- About Me Section -->
+  <div id="about">
+    <div class="about-container">
+      <h1>About Me</h1>
+      <hr>
+      <p>
+        I'm Tom Dror (she/her), a postdoctoral researcher at CIRES, University of Colorado Boulder, embedded in the NOAA Chemical Sciences Laboratory, Clouds, Aerosol, and Climate Group.
+        My passion for clouds drives my research, which focuses on the coupling between land and clouds, largely in the tropics and the Amazon forest.
+        For these investigations, my primary tools are measurements of the Earth's atmosphere, especially those from satellites.
+      </p>
+      <p>Cheers,<br>Tom</p>
+    </div>
   </div>
 
   <script>
