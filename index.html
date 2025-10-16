@@ -81,11 +81,11 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;  /* align items to left */
-      gap: 15px;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin-top: 20px;
       font-family: 'Raleway', sans-serif;
-      font-size: 1.8rem;        /* match home text */
-      font-weight: 500;         /* match home text */
+      font-size: 1.2rem;        /* match home text */
+      font-weight: 300;         /* match home text */
     }
 
     .section-icons a {
@@ -93,7 +93,7 @@
       text-decoration: none;
       display: flex;
       align-items: center;      /* icon to left of text */
-      gap: 10px;                /* space between icon and text */
+      gap: 12px;                /* space between icon and text */
       transition: color 0.2s;
     }
 
@@ -110,9 +110,9 @@
     #home-text {
       position: absolute;
       top: 10%;
-      left: 30%;               /* shifted further to the left */
+      left: 60%;               
       transform: translateX(-50%);
-      width: 450px;            /* box width */
+      width: 450px;            
       font-size: 1.8rem;
       font-weight: 500;
       color: white;
@@ -122,29 +122,28 @@
 
     /* Each line animates individually */
     #home-text span {
-      display: inline-block;
-      max-width: 100%;
+      display: block;                /* changed from inline-block */
+      max-width: 0;                  /* start from 0, expand to full line */
       overflow: hidden;
       border-right: 3px solid white;
-      white-space: normal;           /* allow wrapping */
+      white-space: normal;           
       animation: typing 4s steps(60, end) forwards, blink 0.75s step-end infinite;
       margin-bottom: 0.5rem;
     }
 
     /* Second line starts after first finishes */
     #home-text span:nth-child(2) {
-      animation-delay: 4s;  /* adjust based on first line length */
+      animation-delay: 4s;  
     }
 
     @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
+      from { max-width: 0; }
+      to { max-width: 100%; }         /* expand to full container width */
     }
 
     @keyframes blink {
       50% { border-color: transparent; }
     }
-
   </style>
 </head>
 
@@ -178,6 +177,5 @@
     <span>I use satellite and other observational data to study</span>
     <span>land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.</span>
   </div>
-
 </body>
 </html>
