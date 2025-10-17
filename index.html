@@ -90,6 +90,40 @@
       color: #00aced;
     }
 
+    /* Back to Top Arrow */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px; /* closer to bottom */
+      right: 20px;  /* closer to right */
+      background-color: #667a66; /* green for both circle and arrow */
+      color: #667a66; /* same green for arrow */
+      width: 70px;    /* bigger circle */
+      height: 70px;   /* bigger circle */
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 2.5rem; /* bigger arrow */
+      z-index: 50;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    #back-to-top:hover {
+      background-color: #667a66; /* keep same on hover */
+      color: #667a66; /* arrow stays same */
+      transform: scale(1.1);
+    }
+    /* Section Icons - make hover green #667a66 */
+    .section-icons a:hover {
+      color: #667a66;
+    }
+    
+    /* Social icons - keep same green for hover */
+    .social-icons a:hover {
+      color: #667a66;
+    }
+
     section {
       min-height: 100vh;
       padding-left: 240px;
