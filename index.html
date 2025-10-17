@@ -97,14 +97,14 @@
       right: 20px;  /* closer to right */
       background-color: #667a66; /* green for both circle and arrow */
       color: white; /* arrow color inside the green circle */
-      width: 70px;    /* bigger circle */
-      height: 70px;   /* bigger circle */
+      width: 45px;    /* bigger circle */
+      height: 45px;   /* bigger circle */
       border-radius: 50%;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      font-size: 2.5rem; /* bigger arrow */
+      font-size: 1.2rem; /* bigger arrow */
       z-index: 50;
       transition: background-color 0.3s, transform 0.3s;
     }
@@ -445,7 +445,21 @@
   </section>
 
   <!-- Back to Top Arrow -->
+  <!-- <a href="#home" id="back-to-top"><i class="fas fa-arrow-up"></i></a> -->
+  <!-- Back to Top Arrow -->
   <a href="#home" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+  
+  <script>
+    const backToTop = document.getElementById('back-to-top');
+  
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight) {
+        backToTop.style.display = 'flex'; // show after home section
+      } else {
+        backToTop.style.display = 'none'; // hide when in home section
+      }
+    });
+  </script>
 
   <!-- Typewriter Script -->
   <script>
