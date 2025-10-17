@@ -61,14 +61,16 @@
     }
 
     .social-icons a:hover {
-      color: #00aced;
+      /* color: #00aced; */
+      color: #006400; /* dark green */
+      
     }
 
     .section-icons {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 12px;
+      gap: 25px;
       margin-top: 20px;
       font-family: 'Raleway', sans-serif;
       font-size: 1.2rem;
@@ -301,7 +303,8 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <img src="tom_pic.jpg" alt="Tom Dror" class="profile">
-    <h2>Tom Dror</h2>
+    <!-- <h2>Tom Dror</h2> -->
+    <h2><a href="#home" style="color: inherit; text-decoration: none;">Tom Dror</a></h2>
 
     <div class="social-icons">
       <a href="mailto:tom.drorschwartz@colorado.edu"><i class="fas fa-envelope"></i></a>
@@ -408,6 +411,27 @@
     </div>
   </section>
 
+  <!-- Back to Top Arrow -->
+  <a href="#home" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+  <!-- Typewriter Script -->
+  <script>
+    const homeText = document.getElementById("home-text");
+    const fullText = homeText.textContent.trim();
+    homeText.textContent = "";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < fullText.length) {
+        homeText.textContent += fullText[i];
+        i++;
+        setTimeout(typeWriter, 40);
+      }
+    }
+
+
+  
+
   <!-- Typewriter Script -->
   <script>
     const homeText = document.getElementById("home-text");
@@ -425,5 +449,9 @@
 
     typeWriter();
   </script>
+
+  <!-- Back to top arrow -->
+  <a href="#home" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
 </body>
 </html>
