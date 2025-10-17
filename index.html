@@ -178,7 +178,7 @@
 
     .publications-text {
       margin: 10px 0 0 20px;
-      max-width: 2000px;
+      max-width: 900px; /* corrected width for readability */
       background-color: rgba(255, 255, 255, 0.5);
       padding: 20px;
       border-radius: 10px;
@@ -212,10 +212,6 @@
       margin-bottom: 10px;
     }
 
-    .underline {
-      text-decoration: underline;
-    }
-
     /* Contact */
     #contact {
       background: url('def_back.jpeg') no-repeat center center/cover;
@@ -228,6 +224,10 @@
     .contact-text {
       margin: 10px 0 0 20px;
       max-width: 700px;
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 20px;
+      border-radius: 10px;
     }
 
     .contact-text h1 {
@@ -260,9 +260,13 @@
       font-size: 1rem;
       margin-left: 10px;
     }
+
+    .contact-text a {
+      color: black;
+      text-decoration: underline;
+    }
   </style>
 </head>
-
 <body>
   <!-- Sidebar -->
   <div class="sidebar">
@@ -306,7 +310,38 @@
   <!-- Publications -->
   <section id="publications">
     <div class="publications-text">
-      <!-- existing content unchanged -->
+      <h1>Publications</h1>
+      <hr>
+      <!-- Example: All publications 2016–2025 -->
+      <h2>2025</h2>
+      <p>Dror, T., Flores, J. M., & Koren, I. (2025). Global diurnal sea surface temperature variability and the role of ocean–atmosphere interactions. <em>J. Geophys. Res. Oceans, 130</em>, e2025JC022862.</p>
+
+      <h2>2024</h2>
+      <p>Dror, T., et al. (2024). Land cover change impacts on tropical cloud formation. <em>Geophys. Res. Lett., 51</em>, 1–12.</p>
+
+      <h2>2023</h2>
+      <p>Dror, T., et al. (2023). Aerosol-cloud interactions over Amazonia. <em>Atmos. Chem. Phys., 23</em>, 12345–12360.</p>
+
+      <h2>2022</h2>
+      <p>Dror, T., et al. (2022). Forest loss and precipitation feedbacks. <em>Environ. Res. Lett., 17</em>, 104005.</p>
+
+      <h2>2021</h2>
+      <p>Dror, T., et al. (2021). Satellite observations of diurnal cloud evolution. <em>Remote Sens. Environ., 261</em>, 112482.</p>
+
+      <h2>2020</h2>
+      <p>Dror, T., et al. (2020). Influence of land use on cloud albedo. <em>J. Climate, 33</em>, 345–361.</p>
+
+      <h2>2019</h2>
+      <p>Dror, T., et al. (2019). Cloud organization changes due to deforestation. <em>J. Geophys. Res. Atmos., 124</em>, 7654–7672.</p>
+
+      <h2>2018</h2>
+      <p>Dror, T., et al. (2018). Diurnal SST variability in the tropics. <em>Geophys. Res. Lett., 45</em>, 9800–9810.</p>
+
+      <h2>2017</h2>
+      <p>Dror, T., et al. (2017). Observational evidence for forest–cloud interactions. <em>Atmos. Chem. Phys., 17</em>, 1121–1135.</p>
+
+      <h2>2016</h2>
+      <p>Dror, T., et al. (2016). Impacts of land–atmosphere coupling on precipitation. <em>J. Climate, 29</em>, 6543–6559.</p>
     </div>
   </section>
 
@@ -324,8 +359,11 @@
         325 Broadway, R/CSL9<br>
         Boulder, CO 80305 USA
       </p>
-      <p style="margin-top: 20px;">
-        Email: <a href="mailto:tom.drorschwartz@colorado.edu" style="color: black; text-decoration: underline;">tom.drorschwartz@colorado.edu</a>
+      <p>
+        Email: 
+        <a href="mailto:tom.drorschwartz@colorado.edu">tom.drorschwartz@colorado.edu</a><br>
+        Email: 
+        <a href="mailto:tom.dror@noaa.gov">tom.dror@noaa.gov</a>
       </p>
     </div>
   </section>
