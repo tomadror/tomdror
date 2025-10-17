@@ -453,10 +453,10 @@
     const backToTop = document.getElementById('back-to-top');
   
     window.addEventListener('scroll', () => {
-      if (window.scrollY > window.innerHeight) {
-        backToTop.style.display = 'flex'; // show after home section
+      if (window.scrollY > 50) {  // show after scrolling 50px, adjust as needed
+        backToTop.style.display = 'flex';
       } else {
-        backToTop.style.display = 'none'; // hide when in home section
+        backToTop.style.display = 'none';
       }
     });
   </script>
