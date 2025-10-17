@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta name="description" content="Tom Dror - Postdoctoral researcher at CIRES, University of Colorado Boulder. Studies land–atmosphere interactions, clouds, and precipitation.">
+  <meta name="keywords" content="Tom Dror, CIRES, NOAA, clouds, climate, Amazon forest, land-atmosphere interactions, organization">
   <title>Tom Dror</title>
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,6 +17,13 @@
       color: white;
       scroll-behavior: smooth;
     }
+
+      /* ---- Media queries for mobile ---- */
+    @media (max-width: 600px) {
+      #home-text {
+        top: 15%;
+        font-size: 1.2rem;
+      }
 
     /* Sidebar */
     .sidebar {
@@ -140,13 +148,30 @@
       width: 100%;
       background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center/cover;
     }
-
+/* 
     #home-text {
       position: absolute;
       top: 9%;
       left: 55%;
       width: 800px;
       font-size: 1.8rem;
+      font-weight: 500;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      line-height: 1.4;
+      white-space: pre-wrap;
+      text-indent: 0;
+      margin: 0;
+      padding: 0;
+    } */
+    #home-text {
+      position: absolute;
+      top: 9%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 800px;
+      font-size: 1.5rem; /* smaller on mobile */
       font-weight: 500;
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -331,6 +356,8 @@
       color: black;
       text-decoration: underline;
     }
+
+    
   </style>
 </head>
 <body>
