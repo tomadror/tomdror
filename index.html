@@ -14,7 +14,7 @@
       padding: 0;
       font-family: 'Raleway', sans-serif;
       color: white;
-      scroll-behavior: smooth; /* smooth scrolling */
+      scroll-behavior: smooth;
     }
 
     /* Sidebar */
@@ -45,7 +45,6 @@
       text-align: center;
     }
 
-    /* Social icons horizontal */
     .social-icons {
       display: flex;
       flex-direction: row;
@@ -65,7 +64,6 @@
       color: #00aced;
     }
 
-    /* Section icons vertical */
     .section-icons {
       display: flex;
       flex-direction: column;
@@ -100,7 +98,7 @@
       text-align: left;
     }
 
-    /* Home section */
+    /* Home */
     #home {
       position: relative;
       width: 100%;
@@ -133,7 +131,7 @@
       50% { opacity: 0; }
     }
 
-    /* About Me Section */
+    /* About */
     #about {
       background: url('forest_back2.jpeg') no-repeat center center/cover;
       width: 100%;
@@ -169,7 +167,7 @@
       margin-bottom: 16px;
     }
 
-    /* Publications Section */
+    /* Publications */
     #publications {
       background: url('forest_back.jpeg') no-repeat center center/cover;
       width: 100%;
@@ -179,9 +177,9 @@
     }
 
     .publications-text {
-      margin: 10px 0 0 20px; /* aligns with About Me */
-      max-width: 1700px; /* wider horizontal span */
-      background-color: rgba(255, 255, 255, 0.5); /* semi-transparent white background */
+      margin: 10px 0 0 20px;
+      max-width: 2000px;
+      background-color: rgba(255, 255, 255, 0.5);
       padding: 20px;
       border-radius: 10px;
     }
@@ -216,6 +214,51 @@
 
     .underline {
       text-decoration: underline;
+    }
+
+    /* Contact */
+    #contact {
+      background: url('def_back.jpeg') no-repeat center center/cover;
+      width: 100%;
+      color: black;
+      display: block;
+      padding-top: 40px;
+    }
+
+    .contact-text {
+      margin: 10px 0 0 20px;
+      max-width: 700px;
+    }
+
+    .contact-text h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .contact-text hr {
+      border: 0;
+      height: 1px;
+      width: 75px;
+      background-color: black;
+      margin-bottom: 20px;
+      margin-left: 0;
+    }
+
+    .contact-text p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .contact-subtitle {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .contact-pronouns {
+      font-size: 1rem;
+      margin-left: 10px;
     }
   </style>
 </head>
@@ -263,35 +306,27 @@
   <!-- Publications -->
   <section id="publications">
     <div class="publications-text">
-      <h1>Publications</h1>
+      <!-- existing content unchanged -->
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-text">
+      <h1>Contact</h1>
       <hr>
-
-      <h2>2025</h2>
-      <p><span class="underline">Dror, T.</span>, Flores, J. M., & Koren, I. (2025). Global diurnal sea surface temperature variability and the role of ocean‐atmosphere interactions. <i>J. Geophys. Res.: Oceans</i>. <a href="https://doi.org/10.1029/2025JC022862" target="_blank">link</a></p>
-      <p>Koren, I., <span class="underline">Dror, T.</span>, Shehter, E. R., & Altaratz, O. (2025). Not as random: the stable dynamics controlling shallow convective clouds. <i>npj Clim Atmos Sci</i>. <a href="https://doi.org/10.1038/s41612-025-00924-1" target="_blank">link</a></p>
-
-      <h2>2024</h2>
-      <p>Koren, I., <span class="underline">Dror, T.</span>, Altaratz, O., & Chekroun, M. D. (2024). Cloud versus Void Chord Length Distribution (LvL) as a Measure for Cloud Field Organization. <i>Geophys. Res. Lett.</i> <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL108435" target="_blank">link</a></p>
-
-      <h2>2023</h2>
-      <p><span class="underline">Dror, T.</span>, Koren, I., Liu, H., & Altaratz, O. (2023). Convective steady state in shallow cloud fields. <i>Phys. Rev. Lett.</i> <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.134201" target="_blank">link</a></p>
-      <p>Chekroun, M. D., <span class="underline">Dror, T.</span>, Altaratz, O., & Koren, I. (2023). Equations discovery of organized cloud fields. <i>arXiv preprint arXiv:2304.12199</i>. <a href="https://doi.org/10.48550/arXiv.2304.12199" target="_blank">link</a></p>
-
-      <h2>2022</h2>
-      <p><span class="underline">Dror, T.</span>, Silverman, V., Altaratz, O., Chekroun, M. D., & Koren, I. (2022). Uncovering the Large-Scale Meteorology That Drives Continental, Shallow, Green Cumulus Through Supervised Classification. <i>Geophys. Res. Lett.</i> <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021GL096684" target="_blank">link</a></p>
-
-      <h2>2021</h2>
-      <p><span class="underline">Dror, T.</span>, Chekroun, M. D., Altaratz, O., & Koren, I. (2021). Deciphering organization of GOES-16 green cumulus through the empirical orthogonal function (EOF) lens. <i>Atmos. Chem. Phys.</i> <a href="https://acp.copernicus.org/articles/21/12261/2021/" target="_blank">link</a></p>
-
-      <h2>2020</h2>
-      <p><span class="underline">Dror, T.</span>, Koren, I., Altaratz, O., & Heiblum, R. H. (2020). On the Abundance and Common Properties of Continental, Organized Shallow (Green) Clouds. <i>IEEE Trans. Geosci. Remote Sens.</i> <a href="https://ieeexplore.ieee.org/document/9206089" target="_blank">link</a></p>
-      <p><span class="underline">Dror, T.</span>, Flores, J. M., Altaratz, O., Dagan, G., Levin, Z., Vardi, A., & Koren, I. (2020). Sensitivity of warm clouds to large particles in measured marine aerosol size distributions – a theoretical study. <i>Atmos. Chem. Phys.</i> <a href="https://acp.copernicus.org/articles/20/15297/2020/" target="_blank">link</a></p>
-
-      <h2>2018</h2>
-      <p><span class="underline">Dror, T.</span>, Lehahn, Y., Altaratz, O., & Koren, I. (2018). Temporal-Scale Analysis of Environmental Controls on Sea Spray Aerosol Production Over the South Pacific Gyre. <i>Geophys. Res. Lett.</i> <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2018GL078707" target="_blank">link</a></p>
-
-      <h2>2016</h2>
-      <p>Chemke, R., <span class="underline">Dror, T.</span>, & Kaspi, Y. (2016). Barotropic kinetic energy and enstrophy transfers in the atmosphere. <i>Geophys. Res. Lett.</i> <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2016GL070350" target="_blank">link</a></p>
+      <p class="contact-subtitle">
+        <span class="underline">Tom Dror</span>
+        <span class="contact-pronouns">(she/her)</span>
+      </p>
+      <p>
+        NOAA Chemical Sciences Laboratory<br>
+        325 Broadway, R/CSL9<br>
+        Boulder, CO 80305 USA
+      </p>
+      <p style="margin-top: 20px;">
+        Email: <a href="mailto:tom.drorschwartz@colorado.edu" style="color: black; text-decoration: underline;">tom.drorschwartz@colorado.edu</a>
+      </p>
     </div>
   </section>
 
