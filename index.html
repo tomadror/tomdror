@@ -10,374 +10,359 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Raleway', sans-serif;
-      color: white;
-      scroll-behavior: smooth;
-    }
+  /* ----------------- GLOBAL STYLES ----------------- */
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    scroll-behavior: smooth;
+  }
 
-     /* ---- Media queries for mobile ---- */
-    /* @media (max-width: 600px) {
-      #home-text {
-        top: 15%;
-        font-size: 1.2rem;
-      }
-    } */
+  /* ----------------- SIDEBAR ----------------- */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    z-index: 10;
+  }
 
-    /* Sidebar */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 220px;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 30px;
-      z-index: 10;
-    }
+  .sidebar img.profile {
+    border-radius: 50%;
+    width: 120px;
+    margin-bottom: 15px;
+    border: 3px solid white;
+  }
 
-    .sidebar img.profile {
-      border-radius: 50%;
-      width: 120px;
-      margin-bottom: 15px;
-      border: 3px solid white;
-    }
+  .sidebar h2 {
+    margin: 5px 0 20px;
+    font-size: 20px;
+    text-align: center;
+  }
 
-    .sidebar h2 {
-      margin: 5px 0 20px;
-      font-size: 20px;
-      text-align: center;
-    }
+  /* Social icons */
+  .social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
 
-    .social-icons {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
+  .social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    transition: color 0.2s;
+  }
 
-    .social-icons a {
-      color: white;
-      text-decoration: none;
-      font-size: 22px;
-      transition: color 0.2s;
-    }
+  .social-icons a:hover {
+    color: #667a66;
+  }
 
-    .social-icons a:hover {
-      /* color: #00aced; */
-      color: #006400; /* dark green */
-      
-    }
+  /* Section icons */
+  .section-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
 
-    .section-icons {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 25px;
-      margin-top: 20px;
-      font-family: 'Raleway', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
+  .section-icons a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: color 0.2s;
+  }
 
-    .section-icons a {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      transition: color 0.2s;
-    }
+  .section-icons a:hover {
+    color: #667a66;
+  }
 
-    .section-icons a:hover {
-      color: #00aced;
-    }
+  /* ----------------- BACK TO TOP ----------------- */
+  #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #667a66;
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    z-index: 50;
+    transition: background-color 0.3s, transform 0.3s;
+  }
 
-    /* Back to Top Arrow */
-    #back-to-top {
-      position: fixed;
-      bottom: 20px; /* closer to bottom */
-      right: 20px;  /* closer to right */
-      background-color: #667a66; /* green for both circle and arrow */
-      color: white; /* arrow color inside the green circle */
-      width: 45px;    /* bigger circle */
-      height: 45px;   /* bigger circle */
-      border-radius: 50%;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      font-size: 1.2rem; /* bigger arrow */
-      z-index: 50;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-    
-    #back-to-top:hover {
-      background-color: #667a66; /* keep same on hover */
-      color: #667a66; /* arrow stays same */
-      transform: scale(1.1);
-    }
-    /* Section Icons - make hover green #667a66 */
-    .section-icons a:hover {
-      color: #667a66;
-    }
-    
-    /* Social icons - keep same green for hover */
-    .social-icons a:hover {
-      color: #667a66;
-    }
+  #back-to-top:hover {
+    background-color: #667a66;
+    color: #667a66;
+    transform: scale(1.1);
+  }
 
+  /* ----------------- SECTIONS ----------------- */
+  section {
+    min-height: 100vh;
+    padding-left: 240px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+
+  /* ----------------- HOME ----------------- */
+  #home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center/cover;
+  }
+
+  #home-text {
+    position: absolute;
+    top: 9%;
+    left: 75%;
+    transform: translateX(-50%);
+    width: 50%;
+    max-width: 800px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.4;
+    white-space: pre-wrap;
+    margin: 0;
+    padding: 0;
+  }
+
+  #home-text.typing::after {
+    content: '|';
+    animation: blink 0.7s step-end infinite;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  /* ----------------- ABOUT ----------------- */
+  #about {
+    background: url('forest_back2.jpeg') no-repeat center center/cover;
+    width: 100%;
+    color: black;
+    display: block;
+    padding-top: 20px;
+  }
+
+  .about-text {
+    margin: 10px 0 0 20px;
+    max-width: 700px;
+  }
+
+  .about-text h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .about-text hr {
+    border: 0;
+    height: 1px;
+    width: 85px;
+    background-color: black;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  .about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  /* ----------------- PUBLICATIONS ----------------- */
+  #publications {
+    background: url('forest_back.jpeg') no-repeat center center/cover;
+    width: 100%;
+    color: black;
+    display: block;
+    padding-top: 40px;
+  }
+
+  .publications-text {
+    margin: 10px 0 0 20px;
+    max-width: 2000px;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .publications-text h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .publications-text hr {
+    border: 0;
+    height: 1px;
+    width: 75px;
+    background-color: black;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  .publications-text h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  .publications-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  /* ----------------- CV ----------------- */
+  #cv {
+    background: url('Ron_back.jpg') no-repeat center center/cover;
+    width: 100%;
+    color: black;
+    display: block;
+    padding-top: 40px;
+  }
+
+  .cv-container {
+    margin: 10px 20px 0 20px;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  .cv-container h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .cv-container hr {
+    border: 0;
+    height: 1px;
+    width: 75px;
+    background-color: black;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  .cv-container iframe {
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
+    border: none;
+    display: block;
+  }
+
+  /* ----------------- CONTACT ----------------- */
+  #contact {
+    background: url('def_back.jpeg') no-repeat center center/cover;
+    width: 100%;
+    color: black;
+    display: block;
+    padding-top: 40px;
+  }
+
+  .contact-text {
+    margin: 10px 0 0 20px;
+    max-width: 400px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .contact-text h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .contact-text hr {
+    border: 0;
+    height: 1px;
+    width: 65px;
+    background-color: black;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  .contact-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .contact-subtitle {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  .contact-pronouns {
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+
+  .contact-text a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  /* ----------------- MOBILE STYLES ----------------- */
+  @media (max-width: 600px) {
     section {
-      min-height: 100vh;
-      padding-left: 240px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    #home-text {
+      top: 15%;
+      left: 60%;
+      transform: translateX(-50%);
+      width: 85%;
+      max-width: 300px;
+      font-size: 1.2rem;
       text-align: left;
     }
 
-    /* ---- MOBILE STYLES ---- */
-    @media (max-width: 600px) {
-      section {
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-    /* Home */
-    #home {
-      position: relative;
-      width: 100%;
-      background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center/cover;
-    }
-
-    /* Home text for large screens */
-    #home-text {
-      position: absolute;
-      top: 9%;
-      left: 75%;                /* push text toward right */
-      transform: translateX(-50%);
-      width: 50%;               /* take half of the screen */
-      max-width: 800px;         /* do not exceed this width */
-      font-size: 1.8rem;
-      font-weight: 500;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      line-height: 1.4;
-      white-space: pre-wrap;
-      text-indent: 0;
-      margin: 0;
-      padding: 0;
-    }
-    
-    /* ---- MOBILE STYLES ---- */
-    @media (max-width: 600px) {
-      #home-text {
-        top: 15%;
-        left: 60%;               /* slightly to the right */
-        transform: translateX(-50%);
-        width: 85%;              /* responsive width */
-        max-width: 300px;        /* keep it readable */
-        font-size: 1.2rem;       /* smaller font */
-        text-align: left;        /* left-aligned but slightly right */
-      }
-    }
-    
-    #home-text.typing::after {
-      content: '|';
-      animation: blink 0.7s step-end infinite;
-      margin-left: 2px;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
-    /* About */
-    #about {
-      background: url('forest_back2.jpeg') no-repeat center center/cover;
-      width: 100%;
-      color: black;
-      display: block;
-      padding-top: 20px;
-    }
-
-    .about-text {
-      margin: 10px 0 0 20px;
-      max-width: 700px;
-    }
-
-    .about-text h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .about-text hr {
-      border: 0;
-      height: 1px;
-      width: 85px;
-      background-color: black;
-      margin-bottom: 20px;
-      margin-left: 0;
-    }
-
-    .about-text p {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      text-indent: 0;
-      margin-bottom: 16px;
-    }
-
-    /* Publications */
-    #publications {
-      background: url('forest_back.jpeg') no-repeat center center/cover;
-      width: 100%;
-      color: black;
-      display: block;
-      padding-top: 40px;
-    }
-
-    .publications-text {
-      margin: 10px 0 0 20px;
-      max-width: 2000px;
-      background-color: rgba(255, 255, 255, 0.4);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .publications-text h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .publications-text hr {
-      border: 0;
-      height: 1px;
-      width: 75px;
-      background-color: black;
-      margin-bottom: 20px;
-      margin-left: 0;
-    }
-
-    .publications-text h2 {
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-top: 25px;
-      margin-bottom: 10px;
-    }
-
-    .publications-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 10px;
-    }
-    
-    /* CV */
-    #cv {
-      background: url('Ron_back.jpg') no-repeat center center/cover;
-      width: 100%;
-      color: black;
-      display: block;
-      padding-top: 40px;
-    }
-    
     .cv-container {
-      margin: 10px 20px 0 20px; /* more balanced margin on both sides */
-      max-width: 1000px;
-      background-color: rgba(255, 255, 255, 0.4);
-      padding: 20px; /* slightly smaller padding for mobile */
-      border-radius: 10px;
-      box-sizing: border-box;
-    }
-    
-    .cv-container h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-    
-    .cv-container hr {
-      border: 0;
-      height: 1px;
-      width: 75px;
-      background-color: black;
-      margin-bottom: 20px;
-      margin-left: 0;
-    }
-    
-    /* Make iframe responsive */
-    .cv-container iframe {
-      width: 100%;
-      height: 80vh; /* height relative to viewport */
-      min-height: 500px; /* ensure enough height on small screens */
-      border: none;
-      display: block;
+      padding: 15px;
     }
 
-    /* Contact */
-    #contact {
-      background: url('def_back.jpeg') no-repeat center center/cover;
-      width: 100%;
-      color: black;
-      display: block;
-      padding-top: 40px;
-    }
-
-    .contact-text {
-      margin: 10px 0 0 20px;
-      max-width: 400px;
-      position: relative;
-      background-color: rgba(255, 255, 255, 0.4);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .contact-text h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-      margin-bottom: 5px;
-    }
-
-    .contact-text hr {
-      border: 0;
-      height: 1px;
-      width: 65px;
-      background-color: black;
-      margin-bottom: 20px;
-      margin-left: 0;
-    }
-
-    .contact-text p {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin-bottom: 12px;
-    }
-
-    .contact-subtitle {
-      font-size: 1.8rem;
-      font-weight: 500;
-    }
-
-    .contact-pronouns {
-      font-size: 1rem;
+    .about-text, .publications-text, .contact-text {
       margin-left: 10px;
     }
-
-    .contact-text a {
-      color: black;
-      text-decoration: underline;
-    }
-
-    
-  </style>
+  }
+</style>
 </head>
 <body>
   <!-- Sidebar -->
