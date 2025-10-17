@@ -168,7 +168,7 @@
     #home-text {
       position: absolute;
       top: 9%;
-      left: 60%;
+      left: 70%;
       transform: translateX(-50%);
       width: 90%;
       max-width: 800px;
@@ -273,23 +273,25 @@
       line-height: 1.6;
       margin-bottom: 10px;
     }
-
+    
     /* CV */
     #cv {
-      background: url('Ron_back.jpg') no-repeat center center/cover; /* fixed extension */
+      background: url('Ron_back.jpg') no-repeat center center/cover;
       width: 100%;
-      color: black; /* text color for CV content */
+      color: black;
       display: block;
       padding-top: 40px;
     }
     
     .cv-container {
-      margin: 10px 0 0 20px; /* keeps left alignment like About & Contact */
+      margin: 10px 20px 0 20px; /* more balanced margin on both sides */
       max-width: 1000px;
       background-color: rgba(255, 255, 255, 0.4);
-      padding: 40px 20px;
+      padding: 20px; /* slightly smaller padding for mobile */
       border-radius: 10px;
+      box-sizing: border-box;
     }
+    
     .cv-container h1 {
       font-size: 2.2rem;
       font-weight: 600;
@@ -299,11 +301,21 @@
     .cv-container hr {
       border: 0;
       height: 1px;
-      width: 75px;             /* short line like Publications */
-      background-color: black;  /* black line */
+      width: 75px;
+      background-color: black;
       margin-bottom: 20px;
-      margin-left: 0;           /* left-align */
+      margin-left: 0;
     }
+    
+    /* Make iframe responsive */
+    .cv-container iframe {
+      width: 100%;
+      height: 80vh; /* height relative to viewport */
+      min-height: 500px; /* ensure enough height on small screens */
+      border: none;
+      display: block;
+    }
+
     /* Contact */
     #contact {
       background: url('def_back.jpeg') no-repeat center center/cover;
