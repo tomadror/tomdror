@@ -96,7 +96,7 @@
       bottom: 20px; /* closer to bottom */
       right: 20px;  /* closer to right */
       background-color: #667a66; /* green for both circle and arrow */
-      color: #667a66; /* same green for arrow */
+      color: white; /* arrow color inside the green circle */
       width: 70px;    /* bigger circle */
       height: 70px;   /* bigger circle */
       border-radius: 50%;
@@ -157,7 +157,7 @@
       padding: 0;
     }
 
-    #home-text::after {
+    #home-text.typing::after {
       content: '|';
       animation: blink 0.7s step-end infinite;
       margin-left: 2px;
@@ -357,8 +357,7 @@
 
   <!-- Home -->
   <section id="home">
-    <div id="home-text">
-      I use satellite and other observational data to study land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
+    <div id="home-text">I use satellite and other observational data to study land–atmosphere interactions, focusing on how forest cover change influences clouds, radiation, and precipitation in a changing climate.
     </div>
   </section>
 
@@ -455,37 +454,21 @@
     homeText.textContent = "";
     let i = 0;
 
-    function typeWriter() {
-      if (i < fullText.length) {
-        homeText.textContent += fullText[i];
-        i++;
-        setTimeout(typeWriter, 40);
-      }
-    }
-
-
-  
-
-  <!-- Typewriter Script -->
-  <script>
-    const homeText = document.getElementById("home-text");
-    const fullText = homeText.textContent.trim();
-    homeText.textContent = "";
-    let i = 0;
+    // Add blinking cursor while typing
+    homeText.classList.add('typing');
 
     function typeWriter() {
       if (i < fullText.length) {
         homeText.textContent += fullText[i];
         i++;
         setTimeout(typeWriter, 40);
+      } else {
+        // Remove cursor after finished typing
+        homeText.classList.remove('typing');
       }
     }
 
     typeWriter();
   </script>
-
-  <!-- Back to top arrow -->
-  <a href="#home" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
-
 </body>
 </html>
