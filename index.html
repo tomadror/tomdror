@@ -157,14 +157,15 @@
       background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center/cover;
     }
 
+    /* Home text for large screens */
     #home-text {
       position: absolute;
-      top: 15%;
-      left: 75%;
+      top: 9%;
+      left: 75%;                /* push text toward right */
       transform: translateX(-50%);
-      width: 90%;
-      max-width: 800px;
-      font-size: 1.2rem;
+      width: 50%;               /* take half of the screen */
+      max-width: 800px;         /* do not exceed this width */
+      font-size: 1.8rem;
       font-weight: 500;
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -174,7 +175,20 @@
       margin: 0;
       padding: 0;
     }
-  }
+    
+    /* ---- MOBILE STYLES ---- */
+    @media (max-width: 600px) {
+      #home-text {
+        top: 15%;
+        left: 60%;               /* slightly to the right */
+        transform: translateX(-50%);
+        width: 85%;              /* responsive width */
+        max-width: 300px;        /* keep it readable */
+        font-size: 1.2rem;       /* smaller font */
+        text-align: left;        /* left-aligned but slightly right */
+      }
+    }
+    
     #home-text.typing::after {
       content: '|';
       animation: blink 0.7s step-end infinite;
