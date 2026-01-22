@@ -135,7 +135,7 @@
     background: url('snapshot-2023-08-06T00_00_00Z.jpg') no-repeat center center/cover;
   }
 
-  #home-text {
+  /* #home-text {
     position: absolute;
     top: 9%;
     left: 75%;
@@ -150,6 +150,24 @@
     white-space: pre-wrap;
     margin: 0;
     padding: 0;
+  } */
+
+    #home-text {
+    position: absolute;
+    top: 10%; /* adjust vertical placement */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%; /* relative to screen */
+    max-width: 800px;
+    font-size: clamp(1rem, 1.8vw, 1.8rem); /* scales between 1rem and 1.8rem */
+    font-weight: 500;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.4;
+    white-space: pre-wrap;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* optional, looks better on narrow screens */
   }
 
   #home-text.typing::after {
