@@ -152,14 +152,14 @@
     padding: 0;
   } */
 
-  #home-text {
+  /* #home-text {
     position: absolute;
-    top: 8%;               /* vertical center */
-    left: 80%;              /* start at center */
-    transform: translateX(-50%); /* truly center container */
-    width: 50%;             /* relative width */
-    max-width: 700px;       /* limit so it fits background */
-    font-size: clamp(1rem, 3vw, 1.8rem); /* scales nicely with screen */
+    top: 30%;               
+    left: 50%;              
+    transform: translateX(-50%); 
+    width: 50%;            
+    max-width: 700px;       
+    font-size: clamp(1rem, 3vw, 1.8rem); 
     font-weight: 500;
     color: white;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
@@ -168,7 +168,27 @@
     margin: 0;
     padding: 0;
     text-align: left; 
-  }
+  } */
+
+    #home-text {
+    position: absolute;
+    top: 30%;                   /* vertical placement */
+    left: 50%;                  /* horizontal center */
+    transform: translateX(-50%); /* truly center horizontally */
+    width: 50%;                 /* relative width */
+    max-width: 700px;           /* prevent overflow on wide screens */
+    font-size: clamp(1rem, 3vw, 2rem); /* bigger font scaling */
+    font-weight: 500;
+    color: black;               /* make text black on white background */
+    line-height: 1.4;
+    white-space: pre-wrap;
+    margin: 0;
+    padding: 20px;              /* add padding for background */
+    text-align: left; 
+    background-color: rgba(255, 255, 255, 0.7); /* semi-transparent white */
+    border-radius: 10px;        /* rounded corners */
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3); /* subtle shadow for depth */
+}
 
   #home-text.typing::after {
     content: '|';
